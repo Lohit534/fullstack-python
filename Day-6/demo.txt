@@ -1,0 +1,4 @@
+ram 21
+sam 31
+fam 23
+dam 24

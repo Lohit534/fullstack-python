@@ -1,0 +1,15 @@
+a="10"
+b=int(a)
+print(b)
+print(type(a))
+print(type(b))
+c=10.4
+d=int(c)
+print(d)
+print(type(c))
+print(type(d))
+e="10.4"
+f=float(e)
+print(e)
+print(type(e))
+print(type(f))

@@ -1,0 +1,5 @@
+file=open("demo.txt","a")
+#file_name=file.read()
+#print(file_name)
+file.write("\nyou")
+file.close()
