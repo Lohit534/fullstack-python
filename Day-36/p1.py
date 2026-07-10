@@ -7,10 +7,13 @@
 
 # func(5)
 
-def fun(n):
-    if n==0:
-        return 
+# def fun(n):
+#     if n==0:
+#         return 
     
-    fun(n-1)
-    print(n)
-fun(5)
+#     fun(n-1)
+#     print(n)
+# fun(5)
+
+for i in range(2,10,2):
+    print(i)
