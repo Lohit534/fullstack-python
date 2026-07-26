@@ -1,11 +1,11 @@
 #jewels and stones
-# jewels = "aA"
-# stones = "aAAbbbb"
-# ans=0
-# for i in stones:
-#     if i in jewels:
-#         ans+=1
-# print(ans)
+jewels = "aA"
+stones = "aAAbbbb"
+ans=0
+for i in stones:
+    if i in jewels:
+        ans+=1
+print(ans)
 
 #optimal approach
 
