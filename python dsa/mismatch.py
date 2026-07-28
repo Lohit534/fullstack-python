@@ -1,15 +1,15 @@
 #set mismatch
 
-# nums = [1,2,2,4]
-# n=len(nums)
-# ans=0
-# for i in range(n):
-#     for j in range(i+1,n):
-#         if nums[i]==nums[j]:
-#             temp=nums[j]+1
-#             ans=nums[j],temp
+nums = [1,2,2,4]
+n=len(nums)
+ans=0
+for i in range(n):
+    for j in range(i+1,n):
+        if nums[i]==nums[j]:
+            temp=nums[j]+1
+            ans=nums[j],temp
 
-# print(list(ans))
+print(list(ans))
 
 #optimal approach
 nums = [1,2,2,4]
