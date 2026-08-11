@@ -14,3 +14,4 @@ for i in range(len(s)):
             l+=1
         uni.add(ch)
     ans=max(ans,i-l+1)
+print(ans)
