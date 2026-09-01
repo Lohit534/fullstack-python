@@ -286,14 +286,15 @@ else:
 # Code
 m, n = map(int, input().split())
 
-dp = [1] * n
+dp = [[0] * n for _ in range(m)]
 
-for row in range(1, m):
-    for column in range(1, n):
-        dp[column] = dp[column] + dp[column - 1]
-
-print(dp[n - 1])
-
+for i in range(m):
+    for j in range(n):
+        if i == 0 or j == 0:
+            dp[i][j] = 1
+        else:
+            dp[i][j] = (dp[i - 1][j] + dp[i][j - 1])
+print(dp[m - 1][n - 1])
 
 # 9. Longest Palindromic Substring
 
@@ -365,21 +366,17 @@ else:
 s = input().strip()
 
 n = len(s)
-dp = [[False] * n for i in range(n)]
-
-answer = 0
-
-for i in range(n):
-    dp[i][i] = True
-    answer += 1
-
-for length in range(2, n + 1):
-    for start in range(n - length + 1):
-        end = start + length - 1
-
-        if s[start] == s[end]:
-            if length == 2 or dp[start + 1][end - 1]:
-                dp[start][end] = True
-                answer += 1
-
-print(answer)
+def expand(self, s, left, right):
+    count = 0
+    while (left >= 0 and right < len(s) and s[left] == s[right]):
+        count += 1
+        left -= 1
+        right += 1
+    return count
+def countSubstrings(self, s):
+    ans = 0
+    for i in range(len(s)):
+        ans += self.expand(s, i, i)
+        
+        ans += self.expand(s, i, i + 1)
+    return ans
