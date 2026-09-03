@@ -275,3 +275,27 @@ while left < right:
         right -= 1
 
 print(answer)
+
+#best time to buy sell stock with transaction fee
+def maxProfit(prices: list[int], fee: int) -> int:
+    if not prices:
+        return 0
+
+    holding = -prices[0]
+    free = 0
+
+    for i in range(1, len(prices)):
+        price = prices[i]
+        
+        next_holding = holding
+        if free - price > next_holding:
+            next_holding = free - price
+            
+        next_free = free
+        if holding + price - fee > next_free:
+            next_free = holding + price - fee
+
+        holding = next_holding
+        free = next_free
+
+    return free
