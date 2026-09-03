@@ -277,25 +277,27 @@ while left < right:
 print(answer)
 
 #best time to buy sell stock with transaction fee
-def maxProfit(prices: list[int], fee: int) -> int:
-    if not prices:
-        return 0
+N = int(input())
+fee = int(input())
 
-    holding = -prices[0]
-    free = 0
+prices = list(map(int, input().split())) #prices = [int(input()) for _ in range(N)]
 
-    for i in range(1, len(prices)):
-        price = prices[i]
-        
-        next_holding = holding
-        if free - price > next_holding:
-            next_holding = free - price
-            
-        next_free = free
-        if holding + price - fee > next_free:
-            next_free = holding + price - fee
+NEG = float('-inf')
 
-        holding = next_holding
-        free = next_free
+cash = 0
+hold_even = NEG
+hold_odd = NEG
 
-    return free
+for p in prices:
+    prev_cash = cash
+    prev_even = hold_even
+    prev_odd = hold_odd
+
+    if p % 2 == 0:
+        hold_even = max(prev_even, prev_cash - p)
+        cash = max(prev_cash, prev_odd + p - fee)
+    else:
+        hold_odd = max(prev_odd, prev_cash - p)
+        cash = max(prev_cash, prev_even + p - fee)
+
+print(cash)
